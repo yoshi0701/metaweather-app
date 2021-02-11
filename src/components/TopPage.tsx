@@ -11,20 +11,20 @@ export const TopPage = () => {
           <h1>Top Page</h1>
           <img src="https://www.metaweather.com/static/img/weather/png/64/lc.png" />
         </Content>
-        <Card title="Select weather forecast">
-          <Card type="inner" title="Tokyo">
+        <Card title="地域を選択する">
+          <Card type="inner" title="東京">
             <Button type="primary">
-              <Link to="/tokyo">Check Tokyo Weather</Link>
+              <Link to="/tokyo">東京の天気を確認する</Link>
             </Button>
           </Card>
-          <Card type="inner" title="Nagoya">
+          <Card type="inner" title="名古屋">
             <Button type="primary">
-              <Link to="/nagoya">Check Nagoya Weather</Link>
+              <Link to="/nagoya">名古屋の天気を確認する</Link>
             </Button>
           </Card>
-          <Card type="inner" title="Osaka">
+          <Card type="inner" title="大阪">
             <Button type="primary">
-              <Link to="/osaka">Check Osaka Weather</Link>
+              <Link to="/osaka">大阪の天気を確認する</Link>
             </Button>
           </Card>
         </Card>

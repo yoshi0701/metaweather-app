@@ -5,7 +5,7 @@ export const Header = () => {
   return (
     <Menu theme="dark" mode="horizontal">
       <Menu.Item key="1">
-        <Link to="/" className="top-link">
+        <Link to="/metaweather-app" className="top-link">
           TopPage
         </Link>
       </Menu.Item>

@@ -11,7 +11,7 @@ function App() {
       <Header />
       <div>
         <Switch>
-          <Route exact path='/' component={TopPage} />
+          <Route exact path='/metaweather-app' component={TopPage} />
           <Route exact path='/tokyo' render={() => <WeatherPage city='tokyo'/>} />
           <Route exact path='/nagoya' render={() => <WeatherPage city='nagoya'/>} />
           <Route exact path='/osaka' render={() => <WeatherPage city='osaka'/>} />

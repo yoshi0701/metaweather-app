@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.js": "/metaweather-app/static/js/main.fbdafd43.chunk.js",
-    "main.js.map": "/metaweather-app/static/js/main.fbdafd43.chunk.js.map",
+    "main.js": "/metaweather-app/static/js/main.c48b044f.chunk.js",
+    "main.js.map": "/metaweather-app/static/js/main.c48b044f.chunk.js.map",
     "runtime-main.js": "/metaweather-app/static/js/runtime-main.b938defd.js",
     "runtime-main.js.map": "/metaweather-app/static/js/runtime-main.b938defd.js.map",
     "static/css/2.1e58ee36.chunk.css": "/metaweather-app/static/css/2.1e58ee36.chunk.css",
-    "static/js/2.95e62866.chunk.js": "/metaweather-app/static/js/2.95e62866.chunk.js",
-    "static/js/2.95e62866.chunk.js.map": "/metaweather-app/static/js/2.95e62866.chunk.js.map",
+    "static/js/2.5c02aa80.chunk.js": "/metaweather-app/static/js/2.5c02aa80.chunk.js",
+    "static/js/2.5c02aa80.chunk.js.map": "/metaweather-app/static/js/2.5c02aa80.chunk.js.map",
     "index.html": "/metaweather-app/index.html",
     "static/css/2.1e58ee36.chunk.css.map": "/metaweather-app/static/css/2.1e58ee36.chunk.css.map",
-    "static/js/2.95e62866.chunk.js.LICENSE.txt": "/metaweather-app/static/js/2.95e62866.chunk.js.LICENSE.txt"
+    "static/js/2.5c02aa80.chunk.js.LICENSE.txt": "/metaweather-app/static/js/2.5c02aa80.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.b938defd.js",
     "static/css/2.1e58ee36.chunk.css",
-    "static/js/2.95e62866.chunk.js",
-    "static/js/main.fbdafd43.chunk.js"
+    "static/js/2.5c02aa80.chunk.js",
+    "static/js/main.c48b044f.chunk.js"
   ]
 }
