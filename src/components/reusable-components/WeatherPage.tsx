@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import dayjs from 'dayjs';
 import { WeatherPageItem } from './WeatherPageItem';
 import axios from 'axios';
-import { Card, Tabs } from 'antd';
+import { Card, Tabs, Spin } from 'antd';
 
 interface City {
   city: string;
@@ -16,6 +16,13 @@ const WeatherPage: React.FC<City> = (city) => {
     weather_state_name: string;
     max_temp: number,
     wind_direction_compass: string;
+  }
+
+  const style: { [key: string]: string} = {
+    paddingTop: '50px',
+    textAlign: 'center',
+    fontSize: 'x-large',
+    color: 'lightskyblue',
   }
 
   const { TabPane } = Tabs;
@@ -41,6 +48,8 @@ const WeatherPage: React.FC<City> = (city) => {
     }]
   )
 
+  const [isLoading, setIsLoading] = useState(false);
+
   function cityCode(): number | undefined {
     switch (cityName.city) {
       case 'tokyo':
@@ -56,6 +65,7 @@ const WeatherPage: React.FC<City> = (city) => {
 
   useEffect(() => {
     const fetchForecastData = async () => {
+      setIsLoading(true);
       const weatherArray: any[] = [];
       for (let date = 0; date < 7; date++) {
         const incrementDay = dayjs().add(date, 'day').format('YYYY/MM/DD')
@@ -66,6 +76,7 @@ const WeatherPage: React.FC<City> = (city) => {
         weatherArray.push(response.data[0]);
       }
       setForecastData(weatherArray)
+      setIsLoading(false);
     };
 
     const fetchReportData = async () => {
@@ -87,25 +98,32 @@ const WeatherPage: React.FC<City> = (city) => {
   return (
     <>
       <div>
-        <Tabs defaultActiveKey="2" type="card" size="large">
-          <TabPane tab="Weather last week" key="1">
-            <Card title="Weather last week">
-              {reportData.map(data =>
-                <WeatherPageItem data={data} key={data.id} />
-              )}
-            </Card>
-          </TabPane>
-          <TabPane tab="Weather this week" key="2">
-            <Card title="Weather this week">
-              {forecastData.map(data =>
-                <WeatherPageItem data={data} key={data.id} />
-              )}
-            </Card>
-          </TabPane>
-        </Tabs>
+        {isLoading ? (
+          <div style={style} className="loading-status">
+            Loading ...
+            <Spin size="large" />
+          </div>
+        ) : ( <Tabs defaultActiveKey="2" type="card" size="large">
+            <TabPane tab="Weather last week" key="1">
+
+                <Card title="Weather last week">
+                  {reportData.map(data =>
+                    <WeatherPageItem data={data} key={data.id} />
+                  )}
+                </Card>
+            </TabPane>
+            <TabPane tab="Weather this week" key="2">
+              <Card title="Weather this week">
+                {forecastData.map(data =>
+                  <WeatherPageItem data={data} key={data.id} />
+                )}
+              </Card>
+            </TabPane>
+          </Tabs>
+        )}
       </div>
     </>
   )
-}
+};
 
 export default WeatherPage;
