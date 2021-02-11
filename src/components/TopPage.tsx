@@ -14,23 +14,17 @@ export const TopPage = () => {
         <Card title="Select weather forecast">
           <Card type="inner" title="Tokyo">
             <Button type="primary">
-              <Link to="/tokyo">
-                Check Tokyo Weather
-              </Link>
+              <Link to="/tokyo">Check Tokyo Weather</Link>
             </Button>
           </Card>
           <Card type="inner" title="Nagoya">
             <Button type="primary">
-              <Link to="/nagoya">
-                Check Nagoya Weather
-              </Link>
+              <Link to="/nagoya">Check Nagoya Weather</Link>
             </Button>
           </Card>
           <Card type="inner" title="Osaka">
             <Button type="primary">
-              <Link to="/osaka">
-                Check Osaka Weather
-              </Link>
+              <Link to="/osaka">Check Osaka Weather</Link>
             </Button>
           </Card>
         </Card>

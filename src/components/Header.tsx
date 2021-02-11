@@ -10,5 +10,5 @@ export const Header = () => {
         </Link>
       </Menu.Item>
     </Menu>
-  )
-}
+  );
+};
