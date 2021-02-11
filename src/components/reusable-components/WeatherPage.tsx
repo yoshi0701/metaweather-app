@@ -63,7 +63,6 @@ const WeatherPage: React.FC<City> = (city) => {
           process.env.REACT_APP_PROXY_URL + `https://www.metaweather.com/api/location/${cityCode()}/${incrementDay}`
         );
 
-        console.log(response.data[0]);
         weatherArray.push(response.data[0]);
       }
       setForecastData(weatherArray)
@@ -77,7 +76,6 @@ const WeatherPage: React.FC<City> = (city) => {
           process.env.REACT_APP_PROXY_URL + `https://www.metaweather.com/api/location/${cityCode()}/${decrementDay}`
         );
 
-        console.log(response.data[0]);
         weatherReportArray.push(response.data[0]);
       }
       setReportData(weatherReportArray.reverse())
