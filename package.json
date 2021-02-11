@@ -32,6 +32,7 @@
     "predeply": "npm run build",
     "deploy": "gh-pages -d build"
   },
+  "homepage": "https://yoshi0701.github.io/metaweather-app/",
   "eslintConfig": {
     "extends": [
       "react-app",
