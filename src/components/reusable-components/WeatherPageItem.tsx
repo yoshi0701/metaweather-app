@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Space } from 'antd';
+import { localWeather, localWindDirection } from '../../constants';
 
 interface Data {
   id: number;
@@ -37,8 +38,8 @@ export const WeatherPageItem: React.FC<Props> = ({ data}) => {
         </div>
         <div style={descriptionStyle} className="weather-description-wrapper">
           <Space size="middle">
-            天気: {data.weather_state_name}
-            風向き: {data.wind_direction_compass}
+            天気: {localWeather(data.weather_state_name)}
+            風向き: {localWindDirection(data.wind_direction_compass)}
             最高気温: {Math.round(data.max_temp * 10) / 10}
           </Space>
         </div>
