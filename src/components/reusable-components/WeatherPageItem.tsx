@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Space } from 'antd';
+import { Card, Space, Descriptions } from 'antd';
 import { localWeather, localWindDirection } from '../../constants';
 import './WeatherPageItem.style.scss';
 
@@ -27,11 +27,11 @@ export const WeatherPageItem: React.FC<Props> = ({ data}) => {
           <img src={iconUrl} className="weather-icon-item" alt='icon'/>
         </div>
         <div className="weather-description-wrapper">
-          <Space size="middle">
-            天気: {localWeather(data.weather_state_name)}
-            風向き: {localWindDirection(data.wind_direction_compass)}
-            最高気温: {Math.round(data.max_temp * 10) / 10}
-          </Space>
+          <Descriptions bordered>
+            <Descriptions.Item label="天気">{localWeather(data.weather_state_name)}</Descriptions.Item>
+            <Descriptions.Item label="風向き">{localWindDirection(data.wind_direction_compass)}</Descriptions.Item>
+            <Descriptions.Item label="最高気温">{Math.round(data.max_temp * 10) / 10}℃</Descriptions.Item>
+          </Descriptions>
         </div>
       </div>
     </Card>
