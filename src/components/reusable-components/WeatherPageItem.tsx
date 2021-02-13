@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, Space } from 'antd';
 import { localWeather, localWindDirection } from '../../constants';
+import './WeatherPageItem.style.scss';
 
 interface Data {
   id: number;
@@ -16,27 +17,16 @@ interface Props {
   key: number,
 }
 
-
 export const WeatherPageItem: React.FC<Props> = ({ data}) => {
   const iconUrl = `https://www.metaweather.com/static/img/weather/png/64/${data.weather_state_abbr}.png`;
 
-  const style: { [key: string]: string} = {
-    display: 'flex',
-    fontSize: 'large'
-  }
-
-  const descriptionStyle : { [key: string]: string} = {
-    paddingLeft: '15%',
-    paddingTop: '10px',
-  }
-
   return (
     <Card type="inner" title={data.applicable_date}>
-      <div className="weather-container" style={style}>
+      <div className="weather-container">
         <div className='weather-icon'>
-          <img src={iconUrl} alt='icon'/>
+          <img src={iconUrl} className="weather-icon-item" alt='icon'/>
         </div>
-        <div style={descriptionStyle} className="weather-description-wrapper">
+        <div className="weather-description-wrapper">
           <Space size="middle">
             天気: {localWeather(data.weather_state_name)}
             風向き: {localWindDirection(data.wind_direction_compass)}

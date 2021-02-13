@@ -105,12 +105,11 @@ const WeatherPage: React.FC<City> = (city) => {
           </div>
         ) : ( <Tabs defaultActiveKey="2" type="card" size="large">
             <TabPane tab="先週の天気" key="1">
-
-                <Card title="先週の天気">
-                  {reportData.map(data =>
-                    <WeatherPageItem data={data} key={data.id} />
-                  )}
-                </Card>
+              <Card title="先週の天気">
+                {reportData.map(data =>
+                  <WeatherPageItem data={data} key={data.id} />
+                )}
+              </Card>
             </TabPane>
             <TabPane tab="今週の天気" key="2">
               <Card title="今週の天気">

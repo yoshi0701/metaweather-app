@@ -1,0 +1,26 @@
+.weather-container {
+  display: flex;
+  font-size: large;
+}
+
+.weather-description-wrapper {
+  padding-left: 15%;
+  padding-top: 10px;
+}
+
+@media(max-width: 650px) {
+  .weather-icon-item {
+    width: 60%;
+  }
+
+  .weather-container {
+    display: flex;
+    font-size: x-small;
+  }
+
+  .weather-description-wrapper {
+    padding-left: 5%;
+    padding-top: 10px;
+  }
+
+}
