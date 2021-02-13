@@ -4,6 +4,7 @@ import WeatherPage from './components/reusable-components/WeatherPage';
 import 'antd/dist/antd.css';
 import { Header } from './components/Header';
 import { TopPage } from './components/TopPage';
+import { NotFoundPage } from './NotFoundPage';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route exact path='/tokyo' render={() => <WeatherPage city='tokyo'/>} />
           <Route exact path='/nagoya' render={() => <WeatherPage city='nagoya'/>} />
           <Route exact path='/osaka' render={() => <WeatherPage city='osaka'/>} />
+          <Route component={NotFoundPage} />
         </Switch>
       </div>
     </div>
