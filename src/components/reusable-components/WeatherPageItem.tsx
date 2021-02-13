@@ -1,6 +1,7 @@
 import React from 'react';
+import dayjs from 'dayjs';
 import { Card, Space, Descriptions } from 'antd';
-import { localWeather, localWindDirection } from '../../constants';
+import { localWeather, localWindDirection, replaceDayOfWeek } from '../../constants';
 import './WeatherPageItem.style.scss';
 
 interface Data {
@@ -20,8 +21,15 @@ interface Props {
 export const WeatherPageItem: React.FC<Props> = ({ data}) => {
   const iconUrl = `https://www.metaweather.com/static/img/weather/png/64/${data.weather_state_abbr}.png`;
 
+  const dateWithDay = (): string => {
+    return dayjs(data.applicable_date).format('MM/DD')
+      + '('
+      + replaceDayOfWeek(dayjs(data.applicable_date).day()).day
+      + ')';
+  }
+
   return (
-    <Card type="inner" title={data.applicable_date}>
+    <Card type="inner" title={dateWithDay()}>
       <div className="weather-container">
         <div className='weather-icon'>
           <img src={iconUrl} className="weather-icon-item" alt='icon'/>

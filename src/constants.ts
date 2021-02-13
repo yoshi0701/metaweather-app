@@ -1,3 +1,8 @@
+interface DayWithColor {
+  day: string,
+  color?: string,
+}
+
 export const localWeather = (weather: string) => {
   switch(weather) {
     case 'Snow':
@@ -61,5 +66,26 @@ export const localWindDirection = (windDirection: string) => {
       return '北北西'
     default:
       return '不明'
+  }
+}
+
+export const replaceDayOfWeek = (dayjsDayNumber: number): DayWithColor => {
+  switch(dayjsDayNumber) {
+    case 0:
+      return { day: '日', color: 'red'}
+    case 1:
+      return { day: '月' }
+    case 2:
+      return { day: '火' }
+    case 3:
+      return { day: '水' }
+    case 4:
+      return { day: '木' }
+    case 5:
+      return { day: '金' }
+    case 6:
+      return { day: '土', color: 'blue' }
+    default:
+      return { day: '不明' }
   }
 }
