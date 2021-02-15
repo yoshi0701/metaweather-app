@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { WeatherPage } from './components/reusable-components/WeatherPage';
+import { WeatherPage } from './components/reusable-components/weather-page/WeatherPage';
 import 'antd/dist/antd.css';
 import { Header } from './components/Header';
 import { TopPage } from './components/TopPage';

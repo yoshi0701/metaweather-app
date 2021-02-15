@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import dayjs from 'dayjs';
-import { WeatherPageItem } from './WeatherPageItem';
+import { WeatherPageItem } from '../weather-page-item/WeatherPageItem';
 import axios from 'axios';
 import { Card, Tabs, Spin } from 'antd';
 

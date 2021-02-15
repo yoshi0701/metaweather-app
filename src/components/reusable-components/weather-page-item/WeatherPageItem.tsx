@@ -1,7 +1,7 @@
 import React from 'react';
 import dayjs from 'dayjs';
 import { Card, Space, Descriptions } from 'antd';
-import { localWeather, localWindDirection, replaceDayOfWeek } from '../../constants';
+import { localWeather, localWindDirection, replaceDayOfWeek } from '../../../constants';
 import './WeatherPageItem.style.scss';
 
 interface Data {
