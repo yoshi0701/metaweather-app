@@ -21,6 +21,10 @@ interface Props {
 export const WeatherPageItem: React.FC<Props> = ({ data}) => {
   const iconUrl = `https://www.metaweather.com/static/img/weather/png/64/${data.weather_state_abbr}.png`;
 
+  const isToday = (date: string): boolean => {
+    return dayjs(data.applicable_date).format('MM/DD') === dayjs().format('MM/DD');
+  }
+
   const dateWithDay = (): string => {
     return dayjs(data.applicable_date).format('MM/DD')
       + '('

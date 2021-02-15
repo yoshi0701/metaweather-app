@@ -8,7 +8,7 @@ interface City {
   city: string;
 }
 
-const WeatherPage: React.FC<City> = (city) => {
+export const WeatherPage: React.FC<City> = (city) => {
   interface WeatherResponse {
     id: number;
     weather_state_abbr: string;
@@ -50,7 +50,7 @@ const WeatherPage: React.FC<City> = (city) => {
 
   const [isLoading, setIsLoading] = useState(false);
 
-  function cityCode(): number | undefined {
+  const cityCode = (): number | undefined => {
     switch (cityName.city) {
       case 'tokyo':
         return 1118370
@@ -124,5 +124,3 @@ const WeatherPage: React.FC<City> = (city) => {
     </>
   )
 };
-
-export default WeatherPage;
